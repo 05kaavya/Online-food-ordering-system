@@ -1,0 +1,5 @@
+package com.examly.exception;
+
+public class EmailAlreadyRegisteredException {
+    
+}
