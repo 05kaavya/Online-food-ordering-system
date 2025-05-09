@@ -27,13 +27,13 @@ public class Order {
     public void setCustomerId(int customerId){this.customerId=customerId;}
 
     public int getRestaurantId(){return restaurantId;}
-    public void setRestaurantId(String restaurantId){this.restaurantId=restaurantId;}
+    public void setRestaurantId(int restaurantId){this.restaurantId=restaurantId;}
 
     public String getOrderStatus(){return orderStatus;}
     public void setOrderStatus(String orderStatus){this.orderStatus=orderStatus;}
 
     public double getTotalPrice(){return totalPrice;}
-    public void setTotalPrice(String totalPrice){this.totalPrice=totalPrice;}
+    public void setTotalPrice(double totalPrice){this.totalPrice=totalPrice;}
 
     public String getDeliveryAddress(){return deliveryAddress;}
     public void setDeliveryAddress(String deliveryAddress){this.deliveryAddress=deliveryAddress;}
