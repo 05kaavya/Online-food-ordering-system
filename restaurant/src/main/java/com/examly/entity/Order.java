@@ -11,27 +11,30 @@ public class Order {
 
     public Order() {}
 
-    public Order(int orderId, int customerId, int restaurantId, String orderStatus, double totalPrice, String deliveryString){
+    public Order(int orderId, int customerId, int restaurantId, String orderStatus, double totalPrice, String deliveryAddress){
         this.orderId= orderId;
         this.customerId= customerId;
         this.restaurantId= restaurantId;
         this.orderStatus= orderStatus;
-        this.totalPrice= phoneNumber;
-        this.password= password;
+        this.totalPrice= totalPrice;
+        this.deliveryAddress= deliveryAddress;
     }
+
+    public int getOrderId(){return orderId;}
+    public void setOrderId(int orderId){this.orderId=orderId;}
 
     public int getCustomerId(){return customerId;}
     public void setCustomerId(int customerId){this.customerId=customerId;}
 
-    public String getName(){return name;}
-    public void setName(String name){this.name=name;}
+    public int getRestaurantId(){return restaurantId;}
+    public void setRestaurantId(String restaurantId){this.restaurantId=restaurantId;}
 
-    public String getEmail(){return email;}
-    public void setEmail(String email){this.email=email;}
+    public String getOrderStatus(){return orderStatus;}
+    public void setOrderStatus(String orderStatus){this.orderStatus=orderStatus;}
 
-    public String getPhoneNumber(){return phoneNumber;}
-    public void setPhoneNumber(String phoneNumber){this.phoneNumber=phoneNumber;}
+    public double getTotalPrice(){return totalPrice;}
+    public void setTotalPrice(String totalPrice){this.totalPrice=totalPrice;}
 
-    public String getPassword(){return password;}
-    public void setPassword(String password){this.password=password;}
+    public String getDeliveryAddress(){return deliveryAddress;}
+    public void setDeliveryAddress(String deliveryAddress){this.deliveryAddress=deliveryAddress;}
 }
