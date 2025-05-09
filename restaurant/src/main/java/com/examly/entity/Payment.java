@@ -33,9 +33,7 @@ public class Payment {
     public String getPaymentStatus(){return paymentStatus;}
     public void setPaymentStatus(String paymentStatus){this.paymentStatus=paymentStatus;}
 
-    public double getTotalPrice(){return totalPrice;}
-    public void setTotalPrice(double totalPrice){this.totalPrice=totalPrice;}
+    public double getAmountPaid(){return amountPaid;}
+    public void setAmountPaid(double amountPaid){this.amountPaid=amountPaid;}
 
-    public String getDeliveryAddress(){return deliveryAddress;}
-    public void setDeliveryAddress(String deliveryAddress){this.deliveryAddress=deliveryAddress;}
 }
