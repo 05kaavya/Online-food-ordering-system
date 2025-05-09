@@ -28,11 +28,11 @@ public class Restaurant {
     public void setName(String name){this.name=name;}
 
     public String getAddress(){return address;}
-    public void setAddress(String address){this.deliveryAddress=deliveryAddress;}
+    public void setAddress(String address){this.address=address;}
 
-    public int getOrderId(){return orderId;}
-    public void setOrderId(int orderId){this.orderId=orderId;}
+    public String getOCuisineType(){return cuisineType;}
+    public void setCuisineType(String cuisineType){this.cuisineType=cuisineType;}
 
-    public int getCustomerId(){return customerId;}
-    public void setCustomerId(int customerId){this.customerId=customerId;}
+    public String getContactNumber(){return contactNumber;}
+    public void setContactNumber(String contactNumber){this.contactNumber=contactNumber;}
 }
