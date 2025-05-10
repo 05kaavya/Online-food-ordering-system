@@ -1,5 +1,11 @@
 package com.examly.service;
 
-public class RestaurantService {
+import java.util.List;
+import com.examly.entity.Restaurant;
+
+
+public interface RestaurantService {
+    boolean createRestaurant(Restaurant restaurant) ;
+    List<Restaurant> getAllRestaurants();
     
 }
