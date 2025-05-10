@@ -1,5 +1,7 @@
 package com.examly.service;
 
-public class PaymentService {
-    
+import com.examly.entity.Payment;
+
+public interface PaymentService {
+    boolean processPayment(Payment payment);
 }
