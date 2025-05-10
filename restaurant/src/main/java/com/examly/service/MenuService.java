@@ -1,5 +1,11 @@
 package com.examly.service;
 
-public class MenuService {
+import java.util.List;
+import com.examly.entity.MenuItem;
+import com.examly.exception.RestaurantNotFoundException;
+
+public interface MenuService {
+    boolean createMenuItem(MenuItem menuItem) throws RestaurantNotFoundException;
+    List<MenuItem> getMenuItemsByRestaurant(int restaurantId);
     
 }
