@@ -4,9 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.examly.entity.Customer;
-import com.examly.exception.EmailAlreadyRegisteredException;
+import com.examly.entity.MenuItem;
 import com.examly.exception.RestaurantNotFoundException;
 import com.examly.util.DBConnectionUtil;
 
@@ -23,7 +24,7 @@ public class MenuServiceImpl implements MenuService{
            checkStmt.setInt(1,menuItem.getRestaurantId());
            ResultSet rs = checkStmt.executeQuery();
 
-           if(rs.next() && rs.getInt(1) >0){
+           if(rs.next() && rs.getInt(1)==0){
             throw new RestaurantNotFoundException("Restaurant with ID " + menuItem.getRestaurantId() + " not found");
            }
 
@@ -44,10 +45,28 @@ public class MenuServiceImpl implements MenuService{
 public List<MenuItem> getMenuItemsByRestaurant(int restaurantId){
     List<MenuItem> menuItems = new ArrayList<>();
     String sql = "SELECT * FROM menuItem WHERE restaurantId = ?";
-    try(Connection conn = DBConnectionUtil.getConnection());
+    try(Connection conn = DBConnectionUtil.getConnection();
        PreparedStatement stmt = conn.prepareStatement(sql)){
-        stmt.setInt(1, restaurantId)
+        stmt.setInt(1, restaurantId);
+        ResultSet rs = stmt.executeQuery();
+        while(rs.next()){
+            MenuItem item = new MenuItem(
+                rs.getInt("itemId"),
+                rs.getInt("restaurantId"),
+                rs.getString("name"),
+                rs.getDouble("price"),
+                rs.getString("description"),
+                rs.getInt("availableQuantity"));
+
+            menuItems.add(item);    
+
+
+            
+           }
+       }catch(SQLException e){
+        e.printStackTrace();
        }
+       return menuItems;
 
 }
 }
