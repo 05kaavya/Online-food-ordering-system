@@ -32,7 +32,6 @@ public class OrderServiceImpl implements OrderService{
            int orderRows = orderStmt.executeUpdate();
 
            for(OrderItem item : orderedItems){
-
            itemStmt.setInt(1, item.getOrderId());
            itemStmt.setInt(2, item.getItemId());
            itemStmt.setInt(3, item.getQuantity());
@@ -41,15 +40,15 @@ public class OrderServiceImpl implements OrderService{
 
            int[] itemRows = itemStmt.executeBatch();
            conn.commit();
-           return orderRows >0 && itemRows.length== orderedItems.size();
-        }catch{(SQLException e){
+           return orderRows > 0 && itemRows.length == orderedItems.size();
+        }catch(SQLException e){
             e.printStackTrace();
         return false;
         }
     }
 
     @Override
-public List<Order> getOrdersByCustomer(int customerId){
+    public List<Order> getOrdersByCustomer(int customerId){
     List<Order> orders = new ArrayList<>();
     String sql = "SELECT * FROM 'order' WHERE customerId = ?";
 
@@ -102,9 +101,5 @@ public List<Order> getOrdersByCustomer(int customerId){
             e.printStackTrace();
            }
            return null;
-
-
-
-
-}
+    }
 }
