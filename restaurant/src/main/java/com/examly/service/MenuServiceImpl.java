@@ -13,7 +13,7 @@ import com.examly.util.DBConnectionUtil;
 
 public class MenuServiceImpl implements MenuService{
     @Override
-    public boolean creatMenuItem(MenuItem menuItem) throws RestaurantNotFoundException{
+    public boolean createMenuItem(MenuItem menuItem) throws RestaurantNotFoundException{
         String checkRestaurant = "SELECT COUNT(*) FROM restaurant WHERE restaurantId = ?";
         String insertItem = "INSERT INTO menuItem (restaurantId, name, price, description, availableQuantity) VALUES(?, ?, ?, ?, ?)";
 
