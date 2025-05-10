@@ -15,7 +15,7 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public boolean createOrder(Order order, List<OrderItem> orderedItems) {
         String insertOrder = "INSERT INTO 'order' (orderId, customerId, restaurantId, orderStatus, totalPrice, deliveryAddress) VALUES(?, ?, ?, ?, ?, ?)";
-        String insertItem = "INSERT INTO orderItem (orderId, itemId, quantity) VALUES(?, ?, ?)";
+        String insertOrderItem = "INSERT INTO orderItem (orderId, itemId, quantity) VALUES(?, ?, ?)";
 
         try(Connection conn = DBConnectionUtil.getConnection();
            PreparedStatement orderStmt = conn.prepareStatement(insertOrder);
@@ -33,45 +33,78 @@ public class OrderServiceImpl implements OrderService{
 
            for(OrderItem item : orderedItems){
 
-           insertStmt.setInt(1, item.getOrderId());
-           insertStmt.setInt(2, item.getItemId());
-           insertStmt.setInt(3, item.getQuantity());
-           itemStmt
+           itemStmt.setInt(1, item.getOrderId());
+           itemStmt.setInt(2, item.getItemId());
+           itemStmt.setInt(3, item.getQuantity());
+           itemStmt.addBatch();
            }
 
-           return insertStmt.executeUpdate() > 0;
-    }catch(SQLException e){
-        e.printStackTrace();
+           int[] itemRows = itemStmt.executeBatch();
+           conn.commit();
+           return orderRows >0 && itemRows.length== orderedItems.size();
+        }catch{(SQLException e){
+            e.printStackTrace();
         return false;
+        }
     }
-}
 
-@Override
-public List<MenuItem> getMenuItemsByRestaurant(int restaurantId){
-    List<MenuItem> menuItems = new ArrayList<>();
-    String sql = "SELECT * FROM menuItem WHERE restaurantId = ?";
+    @Override
+public List<Order> getOrdersByCustomer(int customerId){
+    List<Order> orders = new ArrayList<>();
+    String sql = "SELECT * FROM 'order' WHERE customerId = ?";
+
     try(Connection conn = DBConnectionUtil.getConnection();
        PreparedStatement stmt = conn.prepareStatement(sql)){
-        stmt.setInt(1, restaurantId);
+        stmt.setInt(1, customerId);
         ResultSet rs = stmt.executeQuery();
         while(rs.next()){
-            MenuItem item = new MenuItem(
-                rs.getInt("itemId"),
+            Order order = new Order(
+                rs.getInt("OrderId"),
+                rs.getInt("customerId"),
                 rs.getInt("restaurantId"),
-                rs.getString("name"),
-                rs.getDouble("price"),
-                rs.getString("description"),
-                rs.getInt("availableQuantity"));
+                rs.getString("orderStatus"),
+                rs.getDouble("totalPrice"),
+                rs.getInt("deliveryAddress")
+                );
 
-            menuItems.add(item);    
-
-
+            orders.add(order);    
             
-           }
+        }
        }catch(SQLException e){
         e.printStackTrace();
        }
-       return menuItems;
+       return orders;
+        
+    }
+
+    @Override
+    public Order getOrderById(int orderId){ 
+        String sql = "SELECT * FROM 'order' WHERE orderId = ?";
+    
+        try(Connection conn = DBConnectionUtil.getConnection();
+           PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setInt(1, orderId);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                return new Order(
+                    rs.getInt("OrderId"),
+                    rs.getInt("customerId"),
+                    rs.getInt("restaurantId"),
+                    rs.getString("orderStatus"),
+                    rs.getDouble("totalPrice"),
+                    rs.getInt("deliveryAddress")
+                    );
+    
+                //orders.add(order);    
+                
+               }
+           }catch(SQLException e){
+            e.printStackTrace();
+           }
+           return null;
+
+
+
 
 }
 }
