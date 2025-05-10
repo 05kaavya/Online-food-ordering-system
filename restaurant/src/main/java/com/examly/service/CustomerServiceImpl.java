@@ -15,7 +15,12 @@ public class CustomerServiceImpl implements CustomerService{
         String checkQuery = "SELECT COUNT(*) FROM customer WHERE email=?";
         String insertQuery = "INSERT INTO customer (name, email, phoneNumber, password) VALUES(?,?,?,?)";
 
-        try(Connection conn = DBConnectionUtil.getConnection())
+        try(Connection conn = DBConnectionUtil.getConnection());
+           PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+           PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
+
+           checkStmt.setString(1,customer.getEmail());
+           ResultSet 
     }
     
 }
