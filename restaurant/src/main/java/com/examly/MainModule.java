@@ -57,9 +57,46 @@ public class MainModule {
         System.out.print("Enter customer phone number: ");
         String phoneNumber = scanner.nextLine();
         System.out.print("Enter customer password: ");
-        String name = scanner.nextLine();
+        String password = scanner.nextLine();
+
+        Customer customer = new Customer(0,name, email, phoneNumber, password);
+        try{
+            boolean success = customerService.createCustomer(customer);
+            System.out.println("Customer registered successfully!");
+        }catch(EmailAlreadyRegisteredException e){
+            System.out.println("Error: " + e.getMessage());
+        }
 
     }
+
+    private static void createRestaurant(){
+        System.out.print("Enter restaurant name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter restaurant address: ");
+        String address = scanner.nextLine();
+        System.out.print("Enter cuisine type: ");
+        String cuisineType = scanner.nextLine();
+        System.out.print("Enter contact number: ");
+        String contactNumber = scanner.nextLine();
+
+        int restaurantId = (int) (Math.random()*1000) + 1;
+        Restaurant restaurant = new Restaurant(restaurantId, name, address, cuisineType, contactNumber);
+        boolean success = restaurantService.createRestaurant(restaurant);
+        System.out.println("Restaurant created successfully!");
+    }
+
+    private static void createmenuItem(){
+        System.out.print("Enter restaurant ID to add menu item: ");
+        int restaurantId = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Enter menu item name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter cuisine type: ");
+        String cuisineType = scanner.nextLine();
+        System.out.print("Enter contact number: ");
+        String contactNumber = scanner.nextLine();
+
+
 
 
 
