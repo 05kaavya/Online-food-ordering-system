@@ -196,25 +196,29 @@ public class MainModule {
         System.out.print("Enter order ID to make payment: ");
         int orderId = scanner.nextInt();
         System.out.print("Enter amount to pay: ");
-        double amountp
+        double amountPaid = scanner.nextDouble();
+
+        Order order = orderService.getOrderById(orderId);
+
+        if (order == null) {
+            System.out.println("Order not found");
+            return;
+        }
+        if(order.getTotalPrice() !=amountPaid){
+            System.out.println("Invalid amount. Expected: " + order.getTotalPrice());
+            return;
+        }
+
+        int paymentId = (int) (Math.random()*1000) + 1;
+        Payment payment = new Payment(paymentId, orderId, new Date(), "Completed", amountPaid);
+        boolean success = paymentService.processPayment(payment);
+        if(success){
+            System.out.println("Payment successfull Order is now confirmed.");
+            order.setOrderStatus("Confirmed");       
+    }else{
+        System.out.println("Payment Failed");
     }
-
-
-
-
-
-
-
-
-
-               
-
-
-
-
 }
-    
-
 
 
 }
