@@ -163,7 +163,42 @@ public class MainModule {
             return;
         }
 
-        int orderId 
+        int orderId = (int) (Math.random()*1000) +1;
+        double totalPrice = selectedItem.getPrice() * quantity;
+        Order order = new Order(orderId, customerId, restaurantId, "Pending", totalPrice, deliveryAddress);
+        List<OrderItem> orderItems = new ArrayList<>();
+        orderedItems.add(new OrderItem(orderId, itemId, quantity));
+
+        boolean success = orderService.createOrder(order, orderItems);
+        System.out.println("Order placed successfully!");
+    }
+
+    private static void viewOrders(){
+        System.out.print("Enter customer ID to view orders: ");
+        int customerId = scanner.nextInt();
+        List<Order> orders = orderService.getOrdersByCustomer(customerId);
+        if(orders.isEmpty()){
+            System.out.println("No orders found for this customers.");
+        }else{
+            System.out.println("\n=== List of Orders ===");
+            for(Order o : orders){
+                System.out.println("Order ID: " + o.getOrderId());
+                System.out.println("Restaurant ID: " + o.getRestaurantId());
+                System.out.println("Total Price: " + o.getTotalPrice());
+                System.out.println("Order Status: " + o.getOrderStatus());
+                System.out.println("Delivery Address: " + o.getDeliveryAddress());
+                System.out.println();
+            }
+        }
+    }
+
+    private static void makePayment(){
+        System.out.print("Enter order ID to make payment: ");
+        int orderId = scanner.nextInt();
+        System.out.print("Enter amount to pay: ");
+        double amountp
+    }
+
 
 
 
