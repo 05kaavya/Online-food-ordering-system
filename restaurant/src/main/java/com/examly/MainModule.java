@@ -126,6 +126,45 @@ public class MainModule {
         }
     }
 
+    private static void placeOrder(){
+        System.out.print("Enter customer ID: ");
+        int customerId = scanner.nextInt();
+        System.out.print("Enter restaurant ID to place order: ");
+        int restaurantId = scanner.nextInt();
+
+        List<MenuItem>menuItems = menuService.getMenuItemsByRestaurant(restaurantId);
+        if(menuItems.isEmpty()){
+            System.out.println("No menu items available for this restaurant.");
+            return;
+        }
+            System.out.println("\n Menu Items");
+            for(MenuItem item : menuItems){
+                System.out.println("Item ID: " + item.getItemId());
+                System.out.println("Name: " + item.getName());
+                System.out.println("Price: " + item.getPrice());
+                System.out.println("Description: " + item.getDescription());
+                System.out.println("Available Quantity: " + item.getAvailableQuantity());
+                System.out.println();
+            }
+
+        System.out.print("Enter menu item to order: ");
+        int itemId = scanner.nextInt();
+        System.out.print("Enter quantity: ");
+        int quantity = scanner.nextInt();
+        System.out.print("Enter delivery address: ");
+        String deliveryAddess = scanner.nextLine();
+        
+        MenuItem selectedItem = menuItems.stream()
+           .filter(item -> item.getItemId()==itemId)
+           .findFirst()
+           .orElse(null);
+        if(selectedItem == null || selectedItem.getAvailableQuantity() < quantity){
+            System.out.println("Invalid item ID or insufficient quantity");
+            return;
+        }
+
+        int orderId 
+
 
 
 
