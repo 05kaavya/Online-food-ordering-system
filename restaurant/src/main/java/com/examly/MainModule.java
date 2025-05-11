@@ -44,7 +44,7 @@ public class MainModule {
         System.out.println("3, Create Menu Item");
         System.out.println("4, View Restaurants");
         System.out.println("5, Place Order");
-        System.out.println(6, );
+        System.out.println(6, View Orders);
         System.out.println();
 
 
