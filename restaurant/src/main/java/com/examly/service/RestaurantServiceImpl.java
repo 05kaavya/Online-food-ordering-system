@@ -43,22 +43,22 @@ public class RestaurantServiceImpl implements RestaurantService{
         
         ResultSet rs = stmt.executeQuery(sql)){ 
         while(rs.next()){
-            Order order = new Order(
-                rs.getInt("OrderId"),
-                rs.getInt("customerId"),
+            Restaurant restaurant = new Restaurant(
+                
                 rs.getInt("restaurantId"),
-                rs.getString("orderStatus"),
-                rs.getDouble("totalPrice"),
-                rs.getInt("deliveryAddress")
+                rs.getString("name"),
+                rs.getString("address"),
+                rs.getString("cuisineType"),
+                rs.getString("contactNumber")
                 );
 
-            orders.add(order);    
+            restaurants.add(restaurant);    
             
         }
        }catch(SQLException e){
         e.printStackTrace();
        }
-       return orders;
+       return restaurants;
         
     }
 }
