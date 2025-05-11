@@ -18,7 +18,7 @@ public class MainModule {
         while(true){
             displayMenu();
             System.out.print("Chhose an option: ");
-            int choice = scanner.nectInt();
+            int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch(choice){
@@ -50,7 +50,15 @@ public class MainModule {
     }
 
     private static void registerCustomer(){
-        
+        System.out.print("Enter customer name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter customer email: ");
+        String email = scanner.nextLine();
+        System.out.print("Enter customer phone number: ");
+        String phoneNumber = scanner.nextLine();
+        System.out.print("Enter customer password: ");
+        String name = scanner.nextLine();
+
     }
 
 
