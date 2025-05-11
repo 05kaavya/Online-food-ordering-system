@@ -91,10 +91,40 @@ public class MainModule {
         scanner.nextLine();
         System.out.print("Enter menu item name: ");
         String name = scanner.nextLine();
-        System.out.print("Enter cuisine type: ");
-        String cuisineType = scanner.nextLine();
-        System.out.print("Enter contact number: ");
-        String contactNumber = scanner.nextLine();
+        System.out.print("Enter menu item price: ");
+        double price = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.print("Enter menu item description: ");
+        String description = scanner.nextLine();
+        System.out.print("Enter avaliable quantity: ");
+        int avaliableQuantity = scanner.nextInt();
+
+        int itemId = (int) (Math.random()*1000) + 1;
+        MenuItem menuItem = new MenuItem(itemId, restaurantId, name, price, description, avaliableQuantity);
+        try{
+            boolean success = menuService.createMenuItem(menuItem);
+            System.out.println("Menu item created successfully!");
+        }catch(RestaurantNotFoundException e){
+            System.out.println("Error: Restaurant ID "+ restaurantId + " not found");
+        }
+    }
+
+    private static void viewRestaurants(){
+        List<Restaurant>restaurants = restaurantService.getAllRestaurants();
+        if(restaurants.isEmpty()){
+            System.out.println("No restaurants available");
+        }else{
+            System.out.println("\n=== List of Restaurants ===");
+            for(Restaurant r : restaurants){
+                System.out.println("Restaurant ID: " + r.getRestaurantId());
+                System.out.println("Name: " + r.getName());
+                System.out.println("Address: " + r.getAddress());
+                System.out.println("Cuisine Type: " + r.getCuisineType());
+                System.out.println("Contact Number: " + r.getContactNumber());
+                System.out.println();
+            }
+        }
+    }
 
 
 
