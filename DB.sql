@@ -51,5 +51,8 @@ CREATE TABLE orderItem(
 CREATE TABLE payment(
     paymentId INT PRIMARY KEY,
     orderId INT,
-    
-)
+    paymentDate DATETIME NOT NULL,
+    paymentStatus VARCHAR(25),
+    amountPaid DOUBLE NOT NULL,
+    FOREIGN KEY (orderId) REFERENCES 'order'(orderId)
+);
