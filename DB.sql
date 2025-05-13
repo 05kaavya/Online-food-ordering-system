@@ -28,4 +28,28 @@ CREATE TABLE menuItem(
 
 );
 
-CREATE TABLE
+CREATE TABLE 'order'(
+    orderId INT PRIMARY KEY AUTO_INCREMENT,
+    customerId INT,
+    restaurantId INT,
+    orderStatus VARCHAR(35),
+    totalPrice DOUBLE NOT NULL,
+    deliveryAddress VARCHAR(255),
+    FOREIGN KEY (customerId) REFERENCES customer(customerId),
+    FOREIGN KEY (restaurantId) REFERENCES restaurant(restaurantId)
+);
+
+CREATE TABLE orderItem(
+    orderId INT,
+    itemId INT,
+    quantity INT NOT NULL,
+    PRIMARY KEY (orderId, itemId),
+    FOREIGN Key (orderId) REFERENCES 'order'(orderId),
+    FOREIGN KEY (itemId) REFERENCES menuItem(itemId)
+);
+
+CREATE TABLE payment(
+    paymentId INT PRIMARY KEY,
+    orderId INT,
+    
+)
