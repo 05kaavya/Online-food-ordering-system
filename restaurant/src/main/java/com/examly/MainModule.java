@@ -17,7 +17,7 @@ public class MainModule {
     public static void main(String[] args){
         while(true){
             displayMenu();
-            System.out.print("Chhose an option: ");
+            System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -85,7 +85,7 @@ public class MainModule {
         System.out.println("Restaurant created successfully!");
     }
 
-    private static void createmenuItem(){
+    private static void createMenuItem(){
         System.out.print("Enter restaurant ID to add menu item: ");
         int restaurantId = scanner.nextInt();
         scanner.nextLine();
