@@ -58,12 +58,12 @@ public class OrderServiceImpl implements OrderService{
         ResultSet rs = stmt.executeQuery();
         while(rs.next()){
             Order order = new Order(
-                rs.getInt("OrderId"),
+                rs.getInt("orderId"),
                 rs.getInt("customerId"),
                 rs.getInt("restaurantId"),
                 rs.getString("orderStatus"),
                 rs.getDouble("totalPrice"),
-                rs.getInt("deliveryAddress")
+                rs.getString("deliveryAddress")
                 );
 
             orders.add(order);    
@@ -91,10 +91,10 @@ public class OrderServiceImpl implements OrderService{
                     rs.getInt("restaurantId"),
                     rs.getString("orderStatus"),
                     rs.getDouble("totalPrice"),
-                    rs.getInt("deliveryAddress")
+                    rs.getString("deliveryAddress")
                     );
     
-                //orders.add(order);    
+                  
                 
                }
            }catch(SQLException e){
