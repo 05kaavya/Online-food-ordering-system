@@ -1,5 +1,7 @@
 package com.examly.entity;
 
+import java.util.Date;
+
 public class Payment {
     private int paymentId;
     private int orderId;
@@ -28,7 +30,7 @@ public class Payment {
 
     
     public Date getPaymentDate(){return paymentDate;}
-    public void setPaymentDate(int paymentDate){this.paymentDate=paymentDate;}
+    public void setPaymentDate(Date paymentDate){this.paymentDate=paymentDate;}
 
     public String getPaymentStatus(){return paymentStatus;}
     public void setPaymentStatus(String paymentStatus){this.paymentStatus=paymentStatus;}

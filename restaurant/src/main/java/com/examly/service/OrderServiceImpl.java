@@ -14,12 +14,12 @@ import com.examly.util.DBConnectionUtil;
 public class OrderServiceImpl implements OrderService{
     @Override
     public boolean createOrder(Order order, List<OrderItem> orderedItems) {
-        String insertOrder = "INSERT INTO 'order' (orderId, customerId, restaurantId, orderStatus, totalPrice, deliveryAddress) VALUES(?, ?, ?, ?, ?, ?)";
-        String insertOrderItem = "INSERT INTO orderItem (orderId, itemId, quantity) VALUES(?, ?, ?)";
+        String insertOrder = "INSERT INTO 'order' (orderId, customerId, restaurantId, orderStatus, totalPrice, deliveryAddress) VALUES(?,?,?,?,?,?)";
+        String insertOrderItem = "INSERT INTO orderItem (orderId, itemId, quantity) VALUES(?,?,?)";
 
         try(Connection conn = DBConnectionUtil.getConnection();
            PreparedStatement orderStmt = conn.prepareStatement(insertOrder);
-           PreparedStatement insertStmt = conn.prepareStatement(insertOrderItem);
+           PreparedStatement itemStmt = conn.prepareStatement(insertOrderItem);
            ){ 
 
            conn.setAutoCommit(false);
