@@ -7,7 +7,7 @@ import java.util.*;
 
 
 public class MainModule {
-    private static final CustomerService customerService new CustomerServiceImpl();
+    private static final CustomerService customerService  = new CustomerServiceImpl();
     private static final RestaurantService restaurantService = new RestaurantServiceImpl();
     private static final MenuService menuService = new MenuServiceImpl();
     private static final OrderService orderService = new OrderServiceImpl();
