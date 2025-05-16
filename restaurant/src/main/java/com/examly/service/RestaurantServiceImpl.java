@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.examly.entity.Order;
+
 import com.examly.entity.Restaurant;
 import com.examly.util.DBConnectionUtil;
 
