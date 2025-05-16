@@ -30,7 +30,7 @@ public class Restaurant {
     public String getAddress(){return address;}
     public void setAddress(String address){this.address=address;}
 
-    public String getOCuisineType(){return cuisineType;}
+    public String getCuisineType(){return cuisineType;}
     public void setCuisineType(String cuisineType){this.cuisineType=cuisineType;}
 
     public String getContactNumber(){return contactNumber;}
