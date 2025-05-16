@@ -147,15 +147,15 @@ public class MainModule {
                 System.out.println();
             }
 
-        System.out.print("Enter menu item to order: ");
+        System.out.print("Enter menu item ID to order: ");
         int itemId = scanner.nextInt();
         System.out.print("Enter quantity: ");
         int quantity = scanner.nextInt();
         System.out.print("Enter delivery address: ");
-        String deliveryAddess = scanner.nextLine();
+        String deliveryAddress = scanner.nextLine();
         
         MenuItem selectedItem = menuItems.stream()
-           .filter(item -> item.getItemId()==itemId)
+           .filter(item -> item.getItemId()== itemId)
            .findFirst()
            .orElse(null);
         if(selectedItem == null || selectedItem.getAvailableQuantity() < quantity){
@@ -169,7 +169,7 @@ public class MainModule {
         List<OrderItem> orderItems = new ArrayList<>();
         orderedItems.add(new OrderItem(orderId, itemId, quantity));
 
-        boolean success = orderService.createOrder(order, orderItems);
+        boolean success = orderService.createOrder(order, orderedItems);
         System.out.println("Order placed successfully!");
     }
 
