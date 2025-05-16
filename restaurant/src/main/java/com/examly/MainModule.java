@@ -22,9 +22,9 @@ public class MainModule {
             scanner.nextLine();
 
             switch(choice){
-                case 1: registerCustomer();break;
-                case 2: createRestaurant();break;
-                case 3: createMenuItem();break;
+                case 1: registerCustomer(); break;
+                case 2: createRestaurant(); break;
+                case 3: createMenuItem(); break;
                 case 4: viewRestaurants();break;
                 case 5: placeOrder();break;
                 case 6: viewOrders();break;
