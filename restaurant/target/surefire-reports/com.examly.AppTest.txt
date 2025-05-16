@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.AppTest
 -------------------------------------------------------------------------------
-Tests run: 26, Failures: 4, Errors: 1, Skipped: 0, Time elapsed: 0.342 s <<< FAILURE! - in com.examly.AppTest
-com.examly.AppTest.testCustomerInsertQueryExists  Time elapsed: 0.005 s  <<< FAILURE!
+Tests run: 26, Failures: 4, Errors: 1, Skipped: 0, Time elapsed: 0.296 s <<< FAILURE! - in com.examly.AppTest
+com.examly.AppTest.testCustomerInsertQueryExists  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected SQL insert query is missing in CustomerServiceImpl ==> expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -242,7 +242,7 @@ org.opentest4j.AssertionFailedError: Expected SQL insert query is missing in Res
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.examly.AppTest.testOrderInsertQueryExists  Time elapsed: 0.001 s  <<< FAILURE!
+com.examly.AppTest.testOrderInsertQueryExists  Time elapsed: 0.002 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected SQL insert query is missing in OrderServiceImpl ==> expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -322,7 +322,7 @@ org.opentest4j.AssertionFailedError: Expected SQL insert query is missing in Ord
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.examly.AppTest.testCustomerRegistration  Time elapsed: 0.038 s  <<< ERROR!
+com.examly.AppTest.testCustomerRegistration  Time elapsed: 0.016 s  <<< ERROR!
 java.sql.SQLSyntaxErrorException: Table 'appdb.customer' doesn't exist
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
