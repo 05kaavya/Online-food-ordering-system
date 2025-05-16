@@ -20,7 +20,7 @@ public class MainModule {
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
-
+            
             switch(choice){
                 case 1: registerCustomer(); break;
                 case 2: createRestaurant(); break;
