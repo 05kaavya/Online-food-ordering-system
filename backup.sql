@@ -23,6 +23,88 @@
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ `appdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `appdb`;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `customer` (
+  `customerId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phoneNumber` varchar(15) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`customerId`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menuItem`
+--
+
+DROP TABLE IF EXISTS `menuItem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `menuItem` (
+  `itemId` int(11) NOT NULL AUTO_INCREMENT,
+  `restaurantId` int(11) DEFAULT NULL,
+  `name` varchar(100) NOT NULL,
+  `price` double NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `availableQuantity` int(11) NOT NULL,
+  PRIMARY KEY (`itemId`),
+  KEY `restaurantId` (`restaurantId`),
+  CONSTRAINT `menuItem_ibfk_1` FOREIGN KEY (`restaurantId`) REFERENCES `restaurant` (`restaurantId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menuItem`
+--
+
+LOCK TABLES `menuItem` WRITE;
+/*!40000 ALTER TABLE `menuItem` DISABLE KEYS */;
+/*!40000 ALTER TABLE `menuItem` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `restaurant`
+--
+
+DROP TABLE IF EXISTS `restaurant`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `restaurant` (
+  `restaurantId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `cuisineType` varchar(55) DEFAULT NULL,
+  `contactNumber` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`restaurantId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `restaurant`
+--
+
+LOCK TABLES `restaurant` WRITE;
+/*!40000 ALTER TABLE `restaurant` DISABLE KEYS */;
+/*!40000 ALTER TABLE `restaurant` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -33,4 +115,4 @@ USE `appdb`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-16  7:03:17
+-- Dump completed on 2025-05-16  7:14:02

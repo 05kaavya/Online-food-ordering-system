@@ -1,3 +1,4 @@
+-- Active: 1747379242438@@127.0.0.1@3306@appdb
 CREATE DATABASE appdb;
 use appdb;
 
@@ -25,7 +26,6 @@ CREATE TABLE menuItem(
     description VARCHAR(255),
     availableQuantity INT NOT NULL,
     FOREIGN KEY (restaurantId) REFERENCES restaurant(restaurantId)
-
 );
 
 CREATE TABLE 'order'(
