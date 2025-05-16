@@ -18,7 +18,7 @@ public class PaymentServiceImpl implements PaymentService{
            
            stmt.setInt(1, payment.getPaymentId());
            stmt.setInt(2, payment.getOrderId());
-           stmt.setTimestamp(3, new java.sql.Timestamp(payment.getPaymentDate().geTime()));
+           stmt.setTimestamp(3, new java.sql.Timestamp(payment.getPaymentDate().getTime()));
            stmt.setString(4, payment.getPaymentStatus());
            stmt.setDouble(5, payment.getAmountPaid());
 
