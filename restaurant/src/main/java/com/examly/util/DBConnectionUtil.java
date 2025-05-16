@@ -9,6 +9,10 @@ public class DBConnectionUtil {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "examly";
 
+    private DBConnectionUtil(){
+        
+    }
+
     public static Connection getConnection() throws SQLException{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
