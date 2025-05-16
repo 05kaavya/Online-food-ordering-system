@@ -69,7 +69,7 @@ CREATE TABLE `menuItem` (
   PRIMARY KEY (`itemId`),
   KEY `restaurantId` (`restaurantId`),
   CONSTRAINT `menuItem_ibfk_1` FOREIGN KEY (`restaurantId`) REFERENCES `restaurant` (`restaurantId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,6 +78,7 @@ CREATE TABLE `menuItem` (
 
 LOCK TABLES `menuItem` WRITE;
 /*!40000 ALTER TABLE `menuItem` DISABLE KEYS */;
+INSERT INTO `menuItem` VALUES (1,1,'crispy chicken',299,'Our crispy chicken is seasoned to perfection, coated in a crunchy crust, and fried to a mouthwatering crisp. Juicy on the inside, crispy on the outside.',50),(2,2,'prawn biryani',350,'A royal treat from the coast!. Our prawn biryani is a fragrant medley of long-grain basmati rice, succelent prawns, and a rich blend of aromatic spices.',10);
 /*!40000 ALTER TABLE `menuItem` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +96,7 @@ CREATE TABLE `restaurant` (
   `cuisineType` varchar(55) DEFAULT NULL,
   `contactNumber` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`restaurantId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +105,7 @@ CREATE TABLE `restaurant` (
 
 LOCK TABLES `restaurant` WRITE;
 /*!40000 ALTER TABLE `restaurant` DISABLE KEYS */;
-INSERT INTO `restaurant` VALUES (1,'kfc','veppambattu','non-veg','144525635');
+INSERT INTO `restaurant` VALUES (1,'kfc','veppambattu','non-veg','144525635'),(2,'Anjappar hotel','indira nagar,chennai','Veg and non-veg','6523465243');
 /*!40000 ALTER TABLE `restaurant` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -117,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-16  7:29:02
+-- Dump completed on 2025-05-16  7:44:03

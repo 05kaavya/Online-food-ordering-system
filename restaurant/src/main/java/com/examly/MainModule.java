@@ -20,7 +20,7 @@ public class MainModule {
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
-            
+
             switch(choice){
                 case 1: registerCustomer(); break;
                 case 2: createRestaurant(); break;
@@ -166,7 +166,7 @@ public class MainModule {
         int orderId = (int) (Math.random()*1000) +1;
         double totalPrice = selectedItem.getPrice() * quantity;
         Order order = new Order(orderId, customerId, restaurantId, "Pending", totalPrice, deliveryAddress);
-        List<OrderItem> orderItems = new ArrayList<>();
+        List<OrderItem> orderedItems = new ArrayList<>();
         orderedItems.add(new OrderItem(orderId, itemId, quantity));
 
         boolean success = orderService.createOrder(order, orderedItems);
