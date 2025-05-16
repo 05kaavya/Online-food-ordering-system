@@ -41,12 +41,12 @@ public class MainModule {
         System.out.println("\n=== Welcome to the Online Food Delivery System ===");
         System.out.println("1. Register Customer");
         System.out.println("2. Create Restaurant");
-        System.out.println("3, Create Menu Item");
-        System.out.println("4, View Restaurants");
-        System.out.println("5, Place Order");
-        System.out.println("6, View Orders");
-        System.out.println("7, Make Payment");
-        System.out.println("8, Exit");
+        System.out.println("3. Create Menu Item");
+        System.out.println("4. View Restaurants");
+        System.out.println("5. Place Order");
+        System.out.println("6. View Orders");
+        System.out.println("7. Make Payment");
+        System.out.println("8. Exit");
     }
 
     private static void registerCustomer(){
