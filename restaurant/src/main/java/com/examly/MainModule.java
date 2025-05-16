@@ -30,7 +30,8 @@ public class MainModule {
                 case 6: viewOrders();break;
                 case 7: makePayment();break;
                 case 8: System.out.println("Exiting..."); System.exit(0);
-                default: System.out.println("Choose an option: "); break;
+                default: System.out.println("Choose an option: "); 
+                break;
             }
         }
     }

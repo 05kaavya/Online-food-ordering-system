@@ -36,7 +36,7 @@ public class RestaurantServiceImpl implements RestaurantService{
  @Override
     public List<Restaurant> getAllRestaurants(){
     List<Restaurant> restaurants = new ArrayList<>();
-    String sql = "SELECT * FROM restaurant";
+    String sql = "SELECT restaurantId, name, address, cuisineType, contactNumber FROM restaurant";
 
     try(Connection conn = DBConnectionUtil.getConnection();
        Statement stmt = conn.createStatement();
