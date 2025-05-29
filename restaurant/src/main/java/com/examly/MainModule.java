@@ -111,7 +111,7 @@ public class MainModule {
     }
 
     private static void viewRestaurants(){
-        List<Restaurant>restaurants = restaurantService.getAllRestaurants();
+        List<Restaurant> restaurants = restaurantService.getAllRestaurants();
         if(restaurants.isEmpty()){
             System.out.println("No restaurants available");
         }else{
@@ -152,6 +152,7 @@ public class MainModule {
         int itemId = scanner.nextInt();
         System.out.print("Enter quantity: ");
         int quantity = scanner.nextInt();
+        scanner.nextLine();
         System.out.print("Enter delivery address: ");
         String deliveryAddress = scanner.nextLine();
         
