@@ -44,7 +44,7 @@ public class MenuServiceImpl implements MenuService{
 @Override
 public List<MenuItem> getMenuItemsByRestaurant(int restaurantId){
     List<MenuItem> menuItems = new ArrayList<>();
-    String sql = "SELECT * FROM menuItem WHERE restaurantId = ?";
+    String sql = "SELECT restaurantId, name, price, description, availableQuantity FROM menuItem WHERE restaurantId = ?";
     try(Connection conn = DBConnectionUtil.getConnection();
        PreparedStatement stmt = conn.prepareStatement(sql)){
         stmt.setInt(1, restaurantId);
