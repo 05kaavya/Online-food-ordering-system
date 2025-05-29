@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.AppTest
 -------------------------------------------------------------------------------
-Tests run: 26, Failures: 4, Errors: 1, Skipped: 0, Time elapsed: 0.255 s <<< FAILURE! - in com.examly.AppTest
+Tests run: 26, Failures: 4, Errors: 1, Skipped: 0, Time elapsed: 0.249 s <<< FAILURE! - in com.examly.AppTest
 com.examly.AppTest.testCustomerInsertQueryExists  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected SQL insert query is missing in CustomerServiceImpl ==> expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
@@ -322,7 +322,7 @@ org.opentest4j.AssertionFailedError: Expected SQL insert query is missing in Ord
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.examly.AppTest.testCustomerRegistration  Time elapsed: 0.041 s  <<< ERROR!
+com.examly.AppTest.testCustomerRegistration  Time elapsed: 0.042 s  <<< ERROR!
 com.examly.exception.EmailAlreadyRegisteredException: Email john.doe@example.comis already registered
 	at com.examly.service.CustomerServiceImpl.createCustomer(CustomerServiceImpl.java:26)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
