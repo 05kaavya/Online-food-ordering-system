@@ -39,7 +39,7 @@ CREATE TABLE `customer` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`customerId`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'John Doe','john.doe@example.com','12345','67585'),(2,'kaviya','kavs@gmail.com','9845201365','1234');
+INSERT INTO `customer` VALUES (2,'kaviya','kavs@gmail.com','9845201365','1234'),(3,'John Doe','john.doe@example.com','12345','67585');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-29 11:40:30
+-- Dump completed on 2025-05-29 11:50:11
