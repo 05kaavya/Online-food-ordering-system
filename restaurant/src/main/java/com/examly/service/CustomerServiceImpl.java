@@ -13,7 +13,7 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public boolean createCustomer(Customer customer) throws EmailAlreadyRegisteredException{
         String checkQuery = "SELECT COUNT(*) FROM customer WHERE email=?";
-        String insertQuery = "INSERT INTO customer (name, email, phoneNumber, password) VALUES(?,?,?,?)";
+        String insertQuery = "INSERT INTO customer ( name, email, phoneNumber, password) VALUES(?,?,?,?)";
 
         try(Connection conn = DBConnectionUtil.getConnection();
            PreparedStatement checkStmt = conn.prepareStatement(checkQuery);

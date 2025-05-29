@@ -39,7 +39,7 @@ CREATE TABLE `customer` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`customerId`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (2,'kaviya','kavs@gmail.com','9845201365','1234'),(3,'John Doe','john.doe@example.com','12345','67585');
+INSERT INTO `customer` VALUES (2,'kaviya','kavs@gmail.com','9845201365','1234'),(3,'John Doe','john.doe@example.com','12345','67585'),(4,'john','john@gmail.com','9840595441','123');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +96,7 @@ CREATE TABLE `restaurant` (
   `cuisineType` varchar(55) DEFAULT NULL,
   `contactNumber` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`restaurantId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +105,7 @@ CREATE TABLE `restaurant` (
 
 LOCK TABLES `restaurant` WRITE;
 /*!40000 ALTER TABLE `restaurant` DISABLE KEYS */;
-INSERT INTO `restaurant` VALUES (1,'kfc','veppambattu','non-veg','144525635'),(2,'Anjappar hotel','indira nagar,chennai','Veg and non-veg','6523465243');
+INSERT INTO `restaurant` VALUES (1,'kfc','veppambattu','non-veg','144525635'),(2,'Anjappar hotel','indira nagar,chennai','Veg and non-veg','6523465243'),(3,'kfc','ponamalle','non-veg ','144754');
 /*!40000 ALTER TABLE `restaurant` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -118,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-29 11:50:11
+-- Dump completed on 2025-05-29 12:05:11
