@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.examly.AppTest" time="0.3" tests="26" errors="1" skipped="0" failures="4">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.examly.AppTest" time="0.243" tests="26" errors="1" skipped="0" failures="4">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/coder/project/workspace/restaurant/target/surefire/surefirebooter-20250530150041403_3.jar /home/coder/project/workspace/restaurant/target/surefire 2025-05-30T15-00-41_245-jvmRun1 surefire-20250530150041403_1tmp surefire_0-20250530150041403_2tmp"/>
+    <property name="sun.java.command" value="/home/coder/project/workspace/restaurant/target/surefire/surefirebooter-20250530150656288_3.jar /home/coder/project/workspace/restaurant/target/surefire 2025-05-30T15-06-56_120-jvmRun1 surefire-20250530150656288_1tmp surefire_0-20250530150656288_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/coder/project/workspace/restaurant/target/test-classes:/home/coder/project/workspace/restaurant/target/classes:/home/coder/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.0/junit-jupiter-api-5.9.0.jar:/home/coder/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/coder/.m2/repository/org/junit/platform/junit-platform-commons/1.9.0/junit-platform-commons-1.9.0.jar:/home/coder/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/coder/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.0/junit-jupiter-engine-5.9.0.jar:/home/coder/.m2/repository/org/junit/platform/junit-platform-engine/1.9.0/junit-platform-engine-1.9.0.jar:/home/coder/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/home/coder/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar:/home/coder/.m2/repository/org/mockito/mockito-inline/4.0.0/mockito-inline-4.0.0.jar:/home/coder/.m2/repository/org/mockito/mockito-core/4.5.1/mockito-core-4.5.1.jar:/home/coder/.m2/repository/net/bytebuddy/byte-buddy/1.12.9/byte-buddy-1.12.9.jar:/home/coder/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.9/byte-buddy-agent-1.12.9.jar:/home/coder/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/coder/.m2/repository/org/mockito/mockito-junit-jupiter/4.5.1/mockito-junit-jupiter-4.5.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/coder/project/workspace/restaurant/target/surefire/surefirebooter-20250530150041403_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/coder/project/workspace/restaurant/target/surefire/surefirebooter-20250530150656288_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.14+7-Debian-1deb11u1"/>
     <property name="user.name" value="coder"/>
@@ -53,8 +53,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testEntityFolder" classname="com.examly.AppTest" time="0.016"/>
-  <testcase name="testExceptionFolder" classname="com.examly.AppTest" time="0.001"/>
+  <testcase name="testEntityFolder" classname="com.examly.AppTest" time="0.013"/>
+  <testcase name="testExceptionFolder" classname="com.examly.AppTest" time="0.002"/>
   <testcase name="testServiceFolder" classname="com.examly.AppTest" time="0.001"/>
   <testcase name="testCustomerInsertQueryExists" classname="com.examly.AppTest" time="0.003">
     <failure message="Expected SQL insert query is missing in CustomerServiceImpl ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Expected SQL insert query is missing in CustomerServiceImpl ==> expected: <true> but was: <false>
@@ -380,25 +380,25 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 ]]></failure>
   </testcase>
-  <testcase name="testCustomerFileExists" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testMenuFileExists" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testOrderFileExists" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testOrderItemFileExists" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testPaymentFileExists" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testRestaurantFileExists" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testEmaliAlreadyRegisteredExceptionFile" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testRestaurantNotFoundExceptionFile" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testCustomerServiceFile" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testCustomerServiceImplFile" classname="com.examly.AppTest" time="0.001"/>
+  <testcase name="testCustomerFileExists" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testMenuFileExists" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testOrderFileExists" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testOrderItemFileExists" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testPaymentFileExists" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testRestaurantFileExists" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testEmaliAlreadyRegisteredExceptionFile" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testRestaurantNotFoundExceptionFile" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testCustomerServiceFile" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testCustomerServiceImplFile" classname="com.examly.AppTest" time="0"/>
   <testcase name="testRestaurantServiceFile" classname="com.examly.AppTest" time="0"/>
-  <testcase name="testRestaurantServiceImplFile" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testMenuServiceFile" classname="com.examly.AppTest" time="0.001"/>
+  <testcase name="testRestaurantServiceImplFile" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testMenuServiceFile" classname="com.examly.AppTest" time="0"/>
   <testcase name="testMenuServiceImplFile" classname="com.examly.AppTest" time="0"/>
-  <testcase name="testOrderServiceFile" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testOrderServiceImplFile" classname="com.examly.AppTest" time="0.001"/>
-  <testcase name="testPaymentServiceFile" classname="com.examly.AppTest" time="0"/>
-  <testcase name="testPaymentServiceImplFile" classname="com.examly.AppTest" time="0"/>
-  <testcase name="testCustomerRegistration" classname="com.examly.AppTest" time="0.051">
+  <testcase name="testOrderServiceFile" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testOrderServiceImplFile" classname="com.examly.AppTest" time="0"/>
+  <testcase name="testPaymentServiceFile" classname="com.examly.AppTest" time="0.001"/>
+  <testcase name="testPaymentServiceImplFile" classname="com.examly.AppTest" time="0.001"/>
+  <testcase name="testCustomerRegistration" classname="com.examly.AppTest" time="0.04">
     <error message="Email john.doe@example.comis already registered" type="com.examly.exception.EmailAlreadyRegisteredException"><![CDATA[com.examly.exception.EmailAlreadyRegisteredException: Email john.doe@example.comis already registered
 	at com.examly.service.CustomerServiceImpl.createCustomer(CustomerServiceImpl.java:26)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
