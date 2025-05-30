@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public List<Order> getOrdersByCustomer(int customerId){
     List<Order> orders = new ArrayList<>();
-    String sql = "SELECT * FROM 'order' WHERE customerId = ?";
+    String sql = "SELECT orderId, customerId, restaurantId, orderStatus, totalPrice, deliveryAddress FROM 'order' WHERE customerId = ?";
 
     try(Connection conn = DBConnectionUtil.getConnection();
        PreparedStatement stmt = conn.prepareStatement(sql)){
@@ -78,7 +78,7 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public Order getOrderById(int orderId){ 
-        String sql = "SELECT * FROM 'order' WHERE orderId = ?";
+        String sql = "SELECT orderId, customerId, restaurantId, orderStatus, totalPrice, deliveryAddress FROM 'order' WHERE orderId = ?";
     
         try(Connection conn = DBConnectionUtil.getConnection();
            PreparedStatement stmt = conn.prepareStatement(sql)){
